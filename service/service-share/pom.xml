@@ -1,0 +1,35 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.greenline.hrs.platform</groupId>
+        <artifactId>hrs-platform-root-pom</artifactId>
+        <version>2.0.0-SNAPSHOT</version>
+    </parent>
+
+    <groupId>com.demo</groupId>
+    <artifactId>demo-service-share</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    <name>demo-service-share</name>
+
+    <properties>
+        <!-- 是否跳过发布到nexus中心; 默认为true 跳过deploy-->
+        <project.ud.deploy.skip>false</project.ud.deploy.skip>
+        <!-- 是否发布source源码到nexus中心; 默认false.不发布 -->
+        <project.ud.deploy.source>true</project.ud.deploy.source>
+
+        <!-- self -->
+        <v.demo.model>0.0.1-SNAPSHOT</v.demo.model>
+
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.demo</groupId>
+            <artifactId>demo-model</artifactId>
+            <version>${v.demo.model}</version>
+        </dependency>
+    </dependencies>
+</project>
