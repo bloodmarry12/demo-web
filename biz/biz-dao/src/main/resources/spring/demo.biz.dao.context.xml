@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd">
+
+    <!-- 数据库JDBC链接 -->
+    <import resource="classpath:spring/demo.biz.dao.jdbc.xml"/>
+
+    <!-- mybatis相关配置 -->
+    <import resource="classpath:spring/demo.biz.dao.mybatis.xml"/>
+
+    <!-- DAO层相关实现 -->
+    <import resource="classpath:spring/demo.biz.dao.impl.xml"/>
+
+</beans>

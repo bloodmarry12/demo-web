@@ -3,4 +3,27 @@
        xmlns="http://www.springframework.org/schema/beans"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd">
 
+    <!-- ======================================================================== -->
+    <!-- DataSource定义。 -->
+    <!-- ======================================================================== -->
+    <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource"
+          destroy-method="close">
+        <property name="driverClassName" value="${demo.jdbc.mysql.driverClassName}"/>
+        <property name="url" value="${demo.jdbc.mysql.url}"/>
+        <property name="username" value="${demo.jdbc.mysql.username}"/>
+        <property name="password" value="${demo.jdbc.mysql.password}"/>
+        <property name="initialSize" value="${demo.jdbc.mysql.initialSize}"/>
+        <property name="maxTotal" value="${demo.jdbc.mysql.maxTotal}"/>
+        <property name="maxWaitMillis" value="${demo.jdbc.mysql.maxWaitMillis}"/>
+        <property name="maxIdle" value="${demo.jdbc.mysql.maxIdle}"/>
+        <property name="minIdle" value="${demo.jdbc.mysql.minIdle}"/>
+        <property name="validationQuery" value="SELECT 1"/>
+        <property name="removeAbandonedOnBorrow" value="${demo.jdbc.mysql.removeAbandonedOnBorrow}"/>
+        <!--指明连接是否被空闲连接回收器(如果有)进行检验.如果检测失败,则连接将被从池中去除. -->
+        <property name="testWhileIdle" value="${demo.jdbc.mysql.testWhileIdle}"/>
+        <property name="numTestsPerEvictionRun" value="${demo.jdbc.mysql.numTestsPerEvictionRun}"/>
+        <property name="timeBetweenEvictionRunsMillis" value="${demo.jdbc.mysql.timeBetweenEvictionRunsMillis}"/>
+        <property name="minEvictableIdleTimeMillis" value="${demo.jdbc.mysql.minEvictableIdleTimeMillis}"/>
+    </bean>
+
 </beans>
