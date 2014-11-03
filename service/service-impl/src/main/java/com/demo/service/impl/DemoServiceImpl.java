@@ -19,7 +19,7 @@ public class DemoServiceImpl implements DemoService {
     }
 
     @Override
-    public int insert(DemoBO demoBO) {
+    public Long insert(DemoBO demoBO) {
         return demoManager.insert(demoBO);
     }
 

@@ -28,9 +28,10 @@ public class DemoManagerImpl implements DemoManager {
     }
 
     @Override
-    public int insert(DemoBO demoBO) {
+    public Long insert(DemoBO demoBO) {
         DemoPO demoPO = DemoTrans.transform(demoBO);
-        return demoDAO.insert(demoPO);
+        demoDAO.insert(demoPO);
+        return demoPO.getId();
     }
 
     @Override

@@ -24,12 +24,11 @@
         delete from demo
         where id = #{id,jdbcType=BIGINT}
     </delete>
-    <insert id="insert" parameterType="DemoPO">
-
-        insert into demo (id, name, birthday,
+    <insert id="insert" parameterType="DemoPO" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+        insert into demo ( name, birthday,
         is_delete, gmt_created, gmt_modified
         )
-        values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{birthday,jdbcType=DATE},
+        values (#{name,jdbcType=VARCHAR}, #{birthday,jdbcType=DATE},
         #{isDelete,jdbcType=BIT}, #{gmtCreated,jdbcType=TIMESTAMP}, #{gmtModified,jdbcType=TIMESTAMP}
         )
     </insert>
@@ -37,9 +36,6 @@
 
         insert into demo
         <trim prefix="(" suffix=")" suffixOverrides=",">
-            <if test="id != null">
-                id,
-            </if>
             <if test="name != null">
                 name,
             </if>
@@ -57,9 +53,6 @@
             </if>
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
-            <if test="id != null">
-                #{id,jdbcType=BIGINT},
-            </if>
             <if test="name != null">
                 #{name,jdbcType=VARCHAR},
             </if>

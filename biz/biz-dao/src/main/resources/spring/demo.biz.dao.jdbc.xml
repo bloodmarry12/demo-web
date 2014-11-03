@@ -24,6 +24,7 @@
         <property name="numTestsPerEvictionRun" value="${demo.jdbc.mysql.numTestsPerEvictionRun}"/>
         <property name="timeBetweenEvictionRunsMillis" value="${demo.jdbc.mysql.timeBetweenEvictionRunsMillis}"/>
         <property name="minEvictableIdleTimeMillis" value="${demo.jdbc.mysql.minEvictableIdleTimeMillis}"/>
+        <property name="testOnCreate" value="${demo.jdbc.mysql.testOnCreate}"/>
     </bean>
 
 </beans>

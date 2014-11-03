@@ -6,7 +6,7 @@ public interface DemoManager {
 
     int deleteByPrimaryKey(Long id);
 
-    int insert(DemoBO demoBO);
+    Long insert(DemoBO demoBO);
 
     int insertSelective(DemoBO demoBO);
 
